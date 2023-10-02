@@ -89,6 +89,7 @@
 .socials div{
     height: 46.5px;
     width: 50px;
+    display: inline;
 }
 .socials div img{
     height: 100%;
@@ -130,15 +131,21 @@
     }
     #display{
         height: 350px;
-        width: 100%;
     }
     #display img{
-        width: 100%;
         border-left: 2px solid white;
     }
     .socials div{
-        height: 35px;
-        width: 100%;
+        height: 30px;
+        display: inline;
+    }
+    #bodyH div{
+        height: 200px;
+    }
+    .socials div img{
+        height: 30px;
+        width: 30px;
+        background-color: black
     }
     .copyright {
         font-size: 10px;
