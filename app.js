@@ -46,19 +46,22 @@ function setPage(a){
         break;
         case 3: document.getElementById('bodyH').innerHTML =`
             
-                <div class="contactInformation">
+                <div class="contactInformation" style="border-bottom: none; border-top: none;">
                     <h1>Contact Me</h1>
-                    <p>Thank you for your interest in contacting us. feel free to use the information below to guide us on our way to your next scene</p>
+                    <p style="font-size: 12px;">Thank you for your interest in contacting us. feel free to use the information below to guide us on our way to your next scene</p>
                 </div>
-                <div class="contactInformation">
-                    <p>Email: <a href="">Johnsoncustomerservice@email.com.</a></p>
+                <div class="contactInformation" style="border-bottom: none; border-top: none; height: 40px;">
+                    <p style="font-size: 12px;">Email: <a href="">Johnsoncustomerservice@email.com.</a></p>
+                </div>
+                <div class="contactInformation" style="border-bottom: none; border-top: none; height: 40px;">
                     <p>Phone: +0 (000) 000-000</p>
                 </div>
-                <div class="contactInformation">
+                <div class="contactInformation" style="border-bottom: none; border-top: none; ">
                 <p>Peter & Johnson LTD<br>
                      123 Main Street<br>
                     City, State, ZIP Code</p>
                 </div>
+            
             `
         break;
     

@@ -138,9 +138,7 @@
     .socials div{
         height: 30px;
         display: inline;
-    }
-    #bodyH div{
-        height: 200px;
+        
     }
     .socials div img{
         height: 30px;
@@ -149,5 +147,8 @@
     }
     .copyright {
         font-size: 10px;
+    }
+    .contactInformation {
+        font: 8px;
     }
 }
