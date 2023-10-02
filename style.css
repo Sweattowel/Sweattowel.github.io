@@ -136,13 +136,11 @@
         width: 100%;
         border-left: 2px solid white;
     }
-    
     .socials div{
-        height: 50px;
+        height: 35px;
         width: 100%;
     }
-    .socials img{
-        height: 10px;
-        width: 10px;
+    .copyright {
+        font-size: 10px;
     }
 }
