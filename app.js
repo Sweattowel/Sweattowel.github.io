@@ -80,24 +80,23 @@ function setPage(a){
  const scene = new THREE.Scene();
               const camera = new THREE.PerspectiveCamera(20, window.innerWidth / window.innerHeight , 0.1, 30);
               const renderer = new THREE.WebGLRenderer();
-            let cubeHeight = window.innerWidth/4 - 10
-            let cubeWidth = window.innerWidth/4 - 10
+            
             changeCubeDimensions()
 
               addEventListener("resize", changeCubeDimensions);
 
               function changeCubeDimensions(){
                 if (window.innerHeight < 700 || window.innerWidth < 700){
-                cubeWidth = window.innerWidth/4 - 10
-                cubeHeight =  window.innerHeight/4 - 10
+                cubeWidth = (window.innerWidth / 100) * 50
+                cubeHeight =  (window.innerHeight / 100) * 50
               } else {
-                cubeHeight = window.innerWidth/4 - 10
-                cubeWidth = window.innerWidth/4 - 10
+                cubeHeight = window.innerWidth/4 
+                cubeWidth = window.innerWidth/4 
               }
               }
               
 
-              renderer.setSize(cubeHeight, cubeWidth);
+              renderer.setSize(cubeWidth, cubeHeight);
               document.getElementById('myCanvas').appendChild(renderer.domElement);
       
               const images = [
