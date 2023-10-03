@@ -2,12 +2,12 @@ function setPage(a){
     switch(a){
         case 1: document.getElementById('bodyH').innerHTML =`
             <div>
-                <div id="information">
-                    <h1>
+                <div id="information" >
+                    <h1 style="border-right: 1px solid white; height: 350px; align-items: center; display: flex;">
                         Photography you can trust
                     </h1>
                     <div>
-                        <p>
+                        <p style="display: flex; align-self: center; border-bottom: 1px solid white;">
                             Any scene, Anywhere.
                         </p>
                     </div>
@@ -21,15 +21,15 @@ function setPage(a){
         // why the fuck does the code not find myCanvas its the same fucking thing 
         case 2: document.getElementById('bodyH').innerHTML =`
            
-                <div id="information">
+                <div id="information" style="margin-top: -12vh; margin-bottom: -12vh;">
                     <h1>Enjoy our everchanging catalogue </h1>
                 </div>
             
             <div>
-                <div id="information">
+                <div id="information" style="border-right: 2px solid white; border-top: 2px solid white">
                     Elevate your project with this tranquil scene — a greyish hill overlooking a meandering river. Muted tones create a calming backdrop, perfect for conveying serenity and untouched landscapes.
                 </div>
-                <div class="display">
+                <div class="display" style="border-top: 2px solid white">
                     <img src="images/125-1500x1000.jpg" alt="Hill overlooking river" srcset="">
                 </div>
             </div>
@@ -42,7 +42,7 @@ function setPage(a){
                 </div>
             </div>
             <div>
-                <div id="information">
+                <div id="information" style="border-right: 2px solid white">
                     Transport your audience with this breathtaking shot — from grass to a mountain-framed lake. Perfect for projects conveying adventure and the awe-inspiring grandeur of landscapes.
                 </div>
                 <div class="display">
@@ -52,7 +52,7 @@ function setPage(a){
         break;
         case 3: document.getElementById('bodyH').innerHTML =`
             
-                <div class="contactInformation" style="border-bottom: none; border-top: none;">
+                <div class="contactInformation" style="border-bottom: none; border-top: none; ">
                     <h1>Contact Me</h1>
                 </div>
                 <div class="contactInformation" style="border-bottom: none; border-top: none; height: 40px;">
@@ -64,7 +64,7 @@ function setPage(a){
                 <div class="contactInformation" style="border-bottom: none; border-top: none; height: 40px;">
                     <p>Phone: +0 (000) 000-000</p>
                 </div>
-                <div class="contactInformation" style="border-bottom: none; border-top: none; ">
+                <div class="contactInformation" style="border-bottom: none; border-top: none;">
                     <p>Peter & Johnson LTD<br>
                      123 Main Street<br>
                     City, State, ZIP Code</p>
@@ -77,4 +77,56 @@ function setPage(a){
 }
 
 
+ const scene = new THREE.Scene();
+              const camera = new THREE.PerspectiveCamera(20, window.innerWidth / window.innerHeight , 0.1, 30);
+              const renderer = new THREE.WebGLRenderer();
+            let cubeHeight = window.innerWidth/4 - 10
+            let cubeWidth = window.innerWidth/4 - 10
+            changeCubeDimensions()
 
+              addEventListener("resize", changeCubeDimensions);
+
+              function changeCubeDimensions(){
+                if (window.innerHeight < 700 || window.innerWidth < 700){
+                cubeWidth = window.innerWidth/4 - 10
+                cubeHeight =  window.innerHeight/4 - 10
+              } else {
+                cubeHeight = window.innerWidth/4 - 10
+                cubeWidth = window.innerWidth/4 - 10
+              }
+              }
+              
+
+              renderer.setSize(cubeHeight, cubeWidth);
+              document.getElementById('myCanvas').appendChild(renderer.domElement);
+      
+              const images = [
+                  'https://www.calliaweb.co.uk/wp-content/uploads/2015/10/600x600.jpg',
+                  'https://fastly.picsum.photos/id/610/600/600.jpg?hmac=mw4vsbpqQQS6uzKHGswix970ZG9PMgghBSYtF33PpW0',
+                  'https://www.calliaweb.co.uk/wp-content/uploads/2015/10/600x600.jpg',
+                  'https://fastly.picsum.photos/id/610/600/600.jpg?hmac=mw4vsbpqQQS6uzKHGswix970ZG9PMgghBSYtF33PpW0',
+                  'https://www.calliaweb.co.uk/wp-content/uploads/2015/10/600x600.jpg',
+                  'https://fastly.picsum.photos/id/610/600/600.jpg?hmac=mw4vsbpqQQS6uzKHGswix970ZG9PMgghBSYtF33PpW0'
+              ];
+      
+              const textures = images.map(image => new THREE.TextureLoader().load(image));
+      
+              const materials = textures.map(texture => new THREE.MeshBasicMaterial({ map: texture }));
+              
+              const geometry = new THREE.BoxGeometry();
+              const cube = new THREE.Mesh(geometry, materials);
+              
+              scene.add(cube);
+      
+              camera.position.z = 5;
+      
+              const animate = function () {
+                  requestAnimationFrame(animate);
+      
+                  cube.rotation.x += 0.001;
+                  cube.rotation.y += 0.01;
+      
+                  renderer.render(scene, camera);
+              };
+      
+              animate();

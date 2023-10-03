@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 </head>
-<script src="app.js"></script>
 
 <body id="body">
     <div class="head">
@@ -21,12 +20,12 @@
 <div id="myCanvas"></div>
     <div id="bodyH">
         <div>
-            <div id="information">
-                <h1>
+            <div id="information" >
+                <h1 style="border-right: 1px solid white; height: 350px; align-items: center; display: flex;">
                     Photography you can trust
                 </h1>
                 <div>
-                    <p style=" margin-left: 10%;">
+                    <p style="display: flex; align-self: center; border-bottom: 1px solid white;">
                         Any scene, Anywhere.
                     </p>
                 </div>
@@ -51,60 +50,14 @@
                 <a class="socialMediaImage" href="https://linkedin.com/" target="_blank"><img src="images/sociallinkedin.png" alt="Facebook" srcset=""></a>
             </div>
         </div>
-
-
-
-        
-       
- 
-
-
     <div class="copyright">
         © 2023 Peter & Johnson LTD. All rights reserved. Unauthorized use of content on this site is prohibited. 
         For licensing inquiries, contact Johnsoncustomerservice@email.com.
         Real%20estate/index.html
     </div>
-        
-        <script>
-            const scene = new THREE.Scene();
-              const camera = new THREE.PerspectiveCamera(30, window.innerWidth / window.innerHeight , 0.1, 30);
-              const renderer = new THREE.WebGLRenderer();
-              
-              renderer.setSize(350, 350);
-              document.getElementById('myCanvas').appendChild(renderer.domElement);
-      
-              const images = [
-                  'https://www.calliaweb.co.uk/wp-content/uploads/2015/10/600x600.jpg',
-                  'https://fastly.picsum.photos/id/610/600/600.jpg?hmac=mw4vsbpqQQS6uzKHGswix970ZG9PMgghBSYtF33PpW0',
-                  'https://www.calliaweb.co.uk/wp-content/uploads/2015/10/600x600.jpg',
-                  'https://fastly.picsum.photos/id/610/600/600.jpg?hmac=mw4vsbpqQQS6uzKHGswix970ZG9PMgghBSYtF33PpW0',
-                  'https://www.calliaweb.co.uk/wp-content/uploads/2015/10/600x600.jpg',
-                  'https://fastly.picsum.photos/id/610/600/600.jpg?hmac=mw4vsbpqQQS6uzKHGswix970ZG9PMgghBSYtF33PpW0'
-              ];
-      
-              const textures = images.map(image => new THREE.TextureLoader().load(image));
-      
-              const materials = textures.map(texture => new THREE.MeshBasicMaterial({ map: texture }));
-              
-              const geometry = new THREE.BoxGeometry();
-              const cube = new THREE.Mesh(geometry, materials);
-              
-              scene.add(cube);
-      
-              camera.position.z = 5;
-      
-              const animate = function () {
-                  requestAnimationFrame(animate);
-      
-                  cube.rotation.x += 0.01;
-                  cube.rotation.y += 0.01;
-      
-                  renderer.render(scene, camera);
-              };
-      
-              animate();
-          </script>
 </body>
-<br>
-
+<script src="app.js"></script>
+<script>
+    changeCubeDimensions()
+</script>
 </html>
