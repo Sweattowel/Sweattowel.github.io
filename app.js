@@ -87,11 +87,11 @@ function setPage(a){
 
               function changeCubeDimensions(){
                 if (window.innerHeight < 700 || window.innerWidth < 700){
-                cubeWidth = (window.innerWidth / 100) * 50
-                cubeHeight =  (window.innerHeight / 100) * 50
+                cubeWidth = (window.innerWidth / 100) * 30
+                cubeHeight =  (window.innerHeight / 100) * 30
               } else {
-                cubeHeight = window.innerWidth/4 
-                cubeWidth = window.innerWidth/4 
+                cubeWidth = (window.innerWidth / 100) * 30
+                cubeHeight = (window.innerHeight / 100) * 30
               }
               }
               
