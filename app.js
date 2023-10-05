@@ -7,9 +7,9 @@ function setPage(a){
                         Photography you can trust
                     </h1>
                     <div>
-                        <p style="display: flex; align-self: center; border-bottom: 1px solid white;">
-                            Any scene, Anywhere.
-                        </p>
+                    <p style=" border-bottom: 1px solid white; margin-left: 0;">
+                    Any scene, Anywhere.
+                </p>
                     </div>
                 </div>
                 <div class="display">
@@ -103,11 +103,11 @@ function setPage(a){
       
               const images = [
                   'https://www.calliaweb.co.uk/wp-content/uploads/2015/10/600x600.jpg',
-                  'https://fastly.picsum.photos/id/610/600/600.jpg?hmac=mw4vsbpqQQS6uzKHGswix970ZG9PMgghBSYtF33PpW0',
-                  'https://www.calliaweb.co.uk/wp-content/uploads/2015/10/600x600.jpg',
-                  'https://fastly.picsum.photos/id/610/600/600.jpg?hmac=mw4vsbpqQQS6uzKHGswix970ZG9PMgghBSYtF33PpW0',
-                  'https://www.calliaweb.co.uk/wp-content/uploads/2015/10/600x600.jpg',
-                  'https://fastly.picsum.photos/id/610/600/600.jpg?hmac=mw4vsbpqQQS6uzKHGswix970ZG9PMgghBSYtF33PpW0'
+                  'https://fastly.picsum.photos/id/289/600/600.jpg?hmac=XIrchP0R2ERODlCwylxR0cZPu8BP2rF1eQMPUKMvu9k',
+                  'https://fastly.picsum.photos/id/981/600/600.jpg?hmac=cLbEvWcCtsqC35CJ4Pv87iXtWXqKxyKNluti6frx3Rk',
+                  'https://fastly.picsum.photos/id/974/600/600.jpg?hmac=3uc-RdHqWrmLdAHOHextU7-LaljxKszlzasvUHHumMQ',
+                  'https://fastly.picsum.photos/id/570/600/600.jpg?hmac=n0I3nHroHX3een5mn5QbAB_DvEcGQrHrjEgdMqYfmGw',
+                  'https://fastly.picsum.photos/id/892/600/600.jpg?hmac=LOuLMeEA8y9GHri7pVkY1Ws1FZb66uRQQ3Hme5TBeo8'
               ];
       
               const textures = images.map(image => new THREE.TextureLoader().load(image));
@@ -124,7 +124,7 @@ function setPage(a){
               const animate = function () {
                   requestAnimationFrame(animate);
       
-                  cube.rotation.x += 0.001;
+                  cube.rotation.x += 1;
                   cube.rotation.y += 0.01;
       
                   renderer.render(scene, camera);
