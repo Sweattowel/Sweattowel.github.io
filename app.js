@@ -18,7 +18,7 @@ function setPage(a){
             </div>
             <img id="homeImage" src="images/133-2742x1828.jpg" alt="Two parked cars" srcset="">`
         break;
-        // why the fuck does the code not find myCanvas its the same fucking thing 
+        // :) 
         case 2: document.getElementById('bodyH').innerHTML =`
            
                 <div id="information" style="margin-top: -12vh; margin-bottom: -12vh;">
@@ -56,11 +56,13 @@ function setPage(a){
                     <h1>Contact Me</h1>
                 </div>
                 <div class="contactInformation" style="border-bottom: none; border-top: none; height: 40px;">
-                    <p style="font-size: 12px;">Thank you for your interest in contacting us. feel free to use the information below to guide us on our way to your next scene</p>
+                    <p style="font-size: 20px;">Thank you for your interest in contacting us. feel free to use the information below to guide us on our way to your next scene</p>
                 </div>
+                <br>
                 <div class="contactInformation" style="border-bottom: none; border-top: none; height: 40px;">
-                    <p style="font-size: 12px;">Email: <a href="">Johnsoncustomerservice@email.com.</a></p>
+                    <p style="font-size: 16px;">Email: <a href="">Johnsoncustomerservice@email.com.</a></p>
                 </div>
+                
                 <div class="contactInformation" style="border-bottom: none; border-top: none; height: 40px;">
                     <p>Phone: +0 (000) 000-000</p>
                 </div>
