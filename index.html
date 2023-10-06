@@ -4,21 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project explorer</title>
-    <link rel="stylesheet" href="style.css">
+    
 </head>
-<body>
-    <div class="bodyContainer">
+<body id="pageHolder">
+    <div id="bodyH">
+       <link rel="stylesheet" href="INDEX.css"> 
         <h1>
             Sweattowel project storage
         </h1>
         <div class="pageNav">
-            <a href="Sweattowel.github.io/Employee_tracker/enter.html">Employee_tracker v0.3</a>
-            <a href="Sweattowel.github.io/Stock_Photography/index.html">Stock_photography</a>
+            <button class="button" type="button" onclick="chooseSite(1)">Employee tracker</button>
+            <button class="button" type="button" onclick="chooseSite(2)">Stock Photography</button>
         </div>
 
     </div>
     
         
-    
+
 </body>
+<script src="INDEX.js"></script>
+<script src="EmployeeTracker.js"></script>
+<script src="Stockphotography.js"></script>
 </html>

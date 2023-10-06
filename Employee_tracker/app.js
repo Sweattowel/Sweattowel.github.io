@@ -224,6 +224,8 @@ function ask() {
             }
             peopleCount()
             countData()
+            collectReports()
+            startUp()
             break;
     }
 } else {
@@ -353,3 +355,71 @@ function peopleCount(){
     }
     localStorage.setItem('employeeCount', (count.length - 1))
 }
+
+
+
+
+
+function setPage(a){
+    switch(a){
+        case 4: document.getElementById('bodyH').innerHTML =`
+        <div class="navBar">
+        <button class="button" type="button" onclick="setPage(4)">ENTER</button>
+        <button class="button" type="button" onclick="setPage(5)">REPORT</button>
+        <button class="button" type="button" onclick="setPage(6)">INDEX</button>
+        </div>
+        <br>
+        <div class="buttonHolder">
+        <button id="nextButton" onclick=ask()>Ask</button>
+        <button id="clearAll" onclick="clearButton()">Destroy data</button>
+        </div>
+        <div id="weekSummary">
+        The number of employees who worked less than 30 hours a week <span id="less30"></span>
+        <br>
+        The number of employees who worked more than 40 hours a week <span id="more40"></span>
+        <br>
+        The number of employees who worked between 37-39 hours. <span id="goodhour"></span>
+        </div>
+        <div id="completerowHolder"></div>
+        <div id="complaintBox"></div>
+        `
+        startUp()
+        break;
+        case 5: document.getElementById('bodyH').innerHTML =`
+        <link rel="stylesheet" href="style.css">
+        <div class="navBar">
+        <button class="button" type="button" onclick="setPage(4)">ENTER</button>
+        <button class="button" type="button" onclick="setPage(5)">REPORT</button>
+        <button class="button" type="button" onclick="setPage(6)">INDEX</button>
+        </div>
+        <br>
+        <div class="buttonHolder">
+        <input type="number" class="button" id="reportsWanted" placeholder="How many reports?">
+        <button type="button" class="button" onclick="collectReports(document.getElementById('reportsWanted').value)">collect reports</button>
+        </div>
+        <div id="reportCollector"></div>   
+        `
+        break;
+        case 6: document.getElementById('bodyH').innerHTML =`
+        
+        <div>
+        <h1>
+            Sweattowel project storage
+        </h1>
+        <div class="pageNav">
+            <button class="button" type="button" onclick="chooseSite(1)">Employee tracker</button>
+            <button class="button" type="button" onclick="chooseSite(2)">Stock Photography</button>
+        </div>
+        </div>
+    </div>
+        `
+        break;
+    
+    }
+}
+
+
+
+
+
+
