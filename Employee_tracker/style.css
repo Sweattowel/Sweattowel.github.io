@@ -1,5 +1,9 @@
+a {
+    color: white;
+}
 .navBar {
-    border-bottom: 1px solid black;
+
+    border-bottom: 1px solid white;
     display: flex;
     width: 80%;
     align-items: center;
@@ -23,5 +27,25 @@
 }
 
 .indiv {
-    border: 1px solid black;
+    border: 1px solid white;
+    width: 100%;
+
+}
+body {
+    width: 80%;
+    margin: auto;
+    background-color: black;
+    color: white;
+    border-right: 1px solid white;
+    border-left: 1px solid white;
+    border-bottom: 1px solid white;
+    height: 99vh;
+}
+#weekSummary {
+    text-align: center;
+}
+#completerowHolder {
+    display: flex;
+    text-align: center;
+    width: 100%;
 }

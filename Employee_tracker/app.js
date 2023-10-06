@@ -309,8 +309,34 @@ function collectReports(a) {
     }
     let idcount = 1
     
-    for (let i = 0; i < localStorage.length; i++) {
-        const key = localStorage.key(i);
+
+
+
+
+let orderedReports = [];
+for (let i = 0; i < localStorage.length; i++) {
+    const key = localStorage.key(i)
+    if (key !== 'less30Count' && key !== 'more40Count' && key !== 'goodhourCount' && key !== 'dataCount' && idcount <= a && key !== 'employeeCount') {
+    orderedReports.push(localStorage.key(i));
+    }
+}
+
+
+orderedReports.sort((a, b) => {
+    const aFirstChar = a.charAt(0);
+    const bFirstChar = b.charAt(0);
+
+    if (aFirstChar < bFirstChar) {
+        return -1;
+    } else if (aFirstChar > bFirstChar) {
+        return 1;
+    } else {
+        return 0;
+    }
+});
+
+    for (let i = 0; i < orderedReports.length; i++) {
+        const key = orderedReports[i];
 
         if (key !== 'less30Count' && key !== 'more40Count' && key !== 'goodhourCount' && key !== 'dataCount' && idcount <= a && key !== 'employeeCount') {
             const value = JSON.parse(localStorage.getItem(key));
