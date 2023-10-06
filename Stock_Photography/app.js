@@ -131,3 +131,8 @@ function setPage(a){
               };
       
               animate();
+
+
+function returnPage() {
+    location.replace(`C:/Users/Thomas/Documents/GitHub/Sweattowel.github.io/INDEX/index.html`)
+}

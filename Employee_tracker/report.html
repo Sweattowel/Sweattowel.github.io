@@ -12,7 +12,13 @@
         <a href="enter.html">Enter Hours</a>
         <a href="report.html">Report</a>
         <a href="index.html">Index</a>
-       </div>
+    </div>
+    <br>
+    <div class="buttonHolder">
+        <input type="number" class="button" id="reportsWanted" placeholder="How many reports?">
+        <button type="button" class="button" onclick="collectReports(document.getElementById('reportsWanted').value)">collect reports</button>
+    </div>
+    <div id="reportCollector"></div>
 </body>
 <script src="app.js"></script>
 </html>
