@@ -1,0 +1,16 @@
+body{
+    background-color: black;
+}
+.bodyH{
+    background-color: white;
+    width: 80%;
+    margin: auto;
+    height: 100vh;
+    display: flex;
+}
+.title{
+    display: flex;
+}
+.timeH {
+    border: 1px solid black;
+}

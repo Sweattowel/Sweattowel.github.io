@@ -10,6 +10,8 @@ function chooseSite(a) {
         case 2:
             location.replace('https://sweattowel.github.io/Stock_Photography/index.html')
         break;
-
+        case 3:
+            location.replace('https://sweattowel.github.io/Fitness_time_planner/index.html')
+        break;
     }
 }

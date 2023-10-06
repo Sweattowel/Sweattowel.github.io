@@ -85,17 +85,17 @@ function setPage(a){
             
             changeCubeDimensions()
 
-              addEventListener("resize", changeCubeDimensions);
+              addEventListener("resize", changeCubeDimensions());
 
-              function changeCubeDimensions(){
+            function changeCubeDimensions(){
                 if (window.innerHeight < 700 || window.innerWidth < 700){
                 cubeWidth = (window.innerWidth / 100) * 30
                 cubeHeight =  (window.innerHeight / 100) * 30
-              } else {
+            } else {
                 cubeWidth = (window.innerWidth / 100) * 30
                 cubeHeight = (window.innerHeight / 100) * 30
-              }
-              }
+            }
+            }
               
 
               renderer.setSize(cubeWidth, cubeHeight);
