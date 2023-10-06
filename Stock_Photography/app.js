@@ -102,7 +102,7 @@ function setPage(a){
               document.getElementById('myCanvas').appendChild(renderer.domElement);
       
               const images = [
-                  'https://www.calliaweb.co.uk/wp-content/uploads/2015/10/600x600.jpg',
+                  'https://fastly.picsum.photos/id/932/600/600.jpg?hmac=uhYojjkFi755ysUlzX0fuaT10U7Pd63KCtklz3YYTNs',
                   'https://fastly.picsum.photos/id/289/600/600.jpg?hmac=XIrchP0R2ERODlCwylxR0cZPu8BP2rF1eQMPUKMvu9k',
                   'https://fastly.picsum.photos/id/981/600/600.jpg?hmac=cLbEvWcCtsqC35CJ4Pv87iXtWXqKxyKNluti6frx3Rk',
                   'https://fastly.picsum.photos/id/974/600/600.jpg?hmac=3uc-RdHqWrmLdAHOHextU7-LaljxKszlzasvUHHumMQ',
@@ -124,7 +124,7 @@ function setPage(a){
               const animate = function () {
                   requestAnimationFrame(animate);
       
-                  cube.rotation.x += 1;
+                  cube.rotation.x += 0.01;
                   cube.rotation.y += 0.01;
       
                   renderer.render(scene, camera);

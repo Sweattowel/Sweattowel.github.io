@@ -1,0 +1,16 @@
+Real code
+IF (time < 12) {
+	document.writeline("good morning")
+}
+
+Pseudo code
+if time < 12 
+THEN DISPLAY good morning ELSE good afternoon END
+
+Employee tracker V3 pseudo code 
+
+write and then collect data 
+Process and then generate report
+return to write data
+close down program fully 
+

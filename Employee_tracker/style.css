@@ -1,0 +1,19 @@
+.navBar {
+    border-bottom: 1px solid black;
+    display: flex;
+    width: 80%;
+    align-items: center;
+    margin: auto;
+    justify-content: space-around;
+}
+.buttonHolder{
+    display: flex;
+}
+#nextButton {
+    width: 80%;
+    margin: auto
+}
+#clearAll{
+    width: 80%;
+    margin: auto;
+}
