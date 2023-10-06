@@ -1,5 +1,8 @@
 function chooseSite(a) {
     switch(a){
+        case 0:
+            location.replace('https://sweattowel.github.io')
+        break;
         case 1:
             // wouldnt update normally for some reason attempting to force via random comment
             location.replace('https://sweattowel.github.io/Employee_tracker/index.html')
