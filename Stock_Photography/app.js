@@ -1,22 +1,23 @@
 function setPage(a){
     switch(a){
         case 1: document.getElementById('bodyH').innerHTML =`
-            <div>
-                <div id="information" >
-                    <h1 style="border-right: 1px solid white; height: 350px; align-items: center; display: flex;">
-                        Photography you can trust
-                    </h1>
-                    <div>
-                    <p style=" border-bottom: 1px solid white; margin-left: 0;">
+        <div>
+        <div id="information" >
+            <h1 style="margin-left: 20%; border-right: 1px solid white; height: 350px; align-items: center; display: flex;">
+                Photography you can trust
+            </h1>
+            <div >
+                <p style=" border-bottom: 1px solid white; margin-left: 0;">
                     Any scene, Anywhere.
                 </p>
-                    </div>
-                </div>
-                <div class="display">
-                    <img src="images/124-3504x2336.jpg" alt="Boat in ocean" srcset="">
-                </div> 
             </div>
-            <img id="homeImage" src="images/133-2742x1828.jpg" alt="Two parked cars" srcset="">`
+        </div>
+        <div class="display" >
+            <img id="homeIMG" src="images/124-3504x2336.jpg" alt="Boat in ocean" srcset="">
+        </div> 
+    </div>
+    <img id="homeImage" src="images/133-2742x1828.jpg" alt="Two parked cars" srcset="">
+    `
         break;
         // :) 
         case 2: document.getElementById('bodyH').innerHTML =`

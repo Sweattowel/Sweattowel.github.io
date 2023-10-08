@@ -88,6 +88,15 @@ body {
     display: flex;
     width: 80%;
     margin: auto;
+    border-right: 1px solid white;
+}
+#homeIMG{
+    display: flex;
+    width: 80%;
+    margin: auto;
+    margin-right: 20%;
+    border-right: 1px solid white;
+
 }
 /*///////////////////*/
 .footer {
