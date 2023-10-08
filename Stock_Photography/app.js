@@ -52,7 +52,7 @@ function setPage(a){
             </div>`
         break;
         case 3: document.getElementById('bodyH').innerHTML =`
-            
+            <div style="height: 100vh; display: block;">
                 <div class="contactInformation" style="border-bottom: none; border-top: none; ">
                     <h1>Contact Me</h1>
                 </div>
@@ -72,7 +72,7 @@ function setPage(a){
                      123 Main Street<br>
                     City, State, ZIP Code</p>
                 </div>
-            
+            </div>
             `
         break;
     
