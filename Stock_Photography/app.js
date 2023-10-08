@@ -79,58 +79,68 @@ function setPage(a){
 }
 
 
- const scene = new THREE.Scene();
-              const camera = new THREE.PerspectiveCamera(20, window.innerWidth / window.innerHeight , 0.1, 30);
-              const renderer = new THREE.WebGLRenderer();
-            
-            changeCubeDimensions()
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(20, window.innerWidth / window.innerHeight, 0.1, 30);
+const renderer = new THREE.WebGLRenderer();
+const container = document.getElementById('myCanvas');
+document.getElementById('myCanvas').appendChild(renderer.domElement);
 
-              addEventListener("resize", changeCubeDimensions());
+let cubeWidth, cubeHeight;
 
-            function changeCubeDimensions(){
-                if (window.innerHeight < 700 || window.innerWidth < 700){
-                cubeWidth = (window.innerWidth / 100) * 30
-                cubeHeight =  (window.innerHeight / 100) * 30
-            } else {
-                cubeWidth = (window.innerWidth / 100) * 30
-                cubeHeight = (window.innerHeight / 100) * 30
-            }
-            }
-              
+function changeCubeDimensions() {
+    if (window.innerWidth < 700) {
+        cubeWidth = window.innerWidth / 5;
+        cubeHeight = window.innerHeight / 5;
+    } else {
+        cubeWidth = window.innerWidth / 5;
+        cubeHeight = window.innerHeight / 5;
+    }
 
-              renderer.setSize(cubeWidth, cubeHeight);
-              document.getElementById('myCanvas').appendChild(renderer.domElement);
+    // Update renderer size
+    renderer.setSize(cubeWidth, cubeHeight);
+
+    // Update camera aspect ratio
+    camera.aspect = cubeWidth / cubeHeight;
+    camera.updateProjectionMatrix();
+
+    container.style.width = window.width/5;
+    container.style.height = cubeHeight + 5;
+}
+
+// Initial call to set the initial cube dimensions
+changeCubeDimensions();
+
+// Add resize event listener
+window.addEventListener("resize", changeCubeDimensions);
+
+const images = [
+    'https://fastly.picsum.photos/id/932/600/600.jpg?hmac=uhYojjkFi755ysUlzX0fuaT10U7Pd63KCtklz3YYTNs',
+    'https://fastly.picsum.photos/id/289/600/600.jpg?hmac=XIrchP0R2ERODlCwylxR0cZPu8BP2rF1eQMPUKMvu9k',
+    'https://fastly.picsum.photos/id/981/600/600.jpg?hmac=cLbEvWcCtsqC35CJ4Pv87iXtWXqKxyKNluti6frx3Rk',
+    'https://fastly.picsum.photos/id/974/600/600.jpg?hmac=3uc-RdHqWrmLdAHOHextU7-LaljxKszlzasvUHHumMQ',
+    'https://fastly.picsum.photos/id/570/600/600.jpg?hmac=n0I3nHroHX3een5mn5QbAB_DvEcGQrHrjEgdMqYfmGw',
+    'https://fastly.picsum.photos/id/892/600/600.jpg?hmac=LOuLMeEA8y9GHri7pVkY1Ws1FZb66uRQQ3Hme5TBeo8'
+];
       
-              const images = [
-                  'https://fastly.picsum.photos/id/932/600/600.jpg?hmac=uhYojjkFi755ysUlzX0fuaT10U7Pd63KCtklz3YYTNs',
-                  'https://fastly.picsum.photos/id/289/600/600.jpg?hmac=XIrchP0R2ERODlCwylxR0cZPu8BP2rF1eQMPUKMvu9k',
-                  'https://fastly.picsum.photos/id/981/600/600.jpg?hmac=cLbEvWcCtsqC35CJ4Pv87iXtWXqKxyKNluti6frx3Rk',
-                  'https://fastly.picsum.photos/id/974/600/600.jpg?hmac=3uc-RdHqWrmLdAHOHextU7-LaljxKszlzasvUHHumMQ',
-                  'https://fastly.picsum.photos/id/570/600/600.jpg?hmac=n0I3nHroHX3een5mn5QbAB_DvEcGQrHrjEgdMqYfmGw',
-                  'https://fastly.picsum.photos/id/892/600/600.jpg?hmac=LOuLMeEA8y9GHri7pVkY1Ws1FZb66uRQQ3Hme5TBeo8'
-              ];
-      
-              const textures = images.map(image => new THREE.TextureLoader().load(image));
-      
-              const materials = textures.map(texture => new THREE.MeshBasicMaterial({ map: texture }));
-              
-              const geometry = new THREE.BoxGeometry();
-              const cube = new THREE.Mesh(geometry, materials);
-              
-              scene.add(cube);
-      
-              camera.position.z = 5;
-      
-              const animate = function () {
-                  requestAnimationFrame(animate);
-      
-                  cube.rotation.x += 0.01;
-                  cube.rotation.y += 0.01;
-      
-                  renderer.render(scene, camera);
-              };
-      
-              animate();
+const textures = images.map(image => new THREE.TextureLoader().load(image));
+const materials = textures.map(texture => new THREE.MeshBasicMaterial({ map: texture }));
+
+const geometry = new THREE.BoxGeometry();
+const cube = new THREE.Mesh(geometry, materials);
+scene.add(cube);
+
+camera.position.z = 5;
+
+const animate = function () {
+    requestAnimationFrame(animate);
+
+    cube.rotation.x += 0.01;
+    cube.rotation.y += 0.01;
+
+    renderer.render(scene, camera);
+};
+
+animate();
 
 
 function returnPage() {
