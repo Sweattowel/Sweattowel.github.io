@@ -6,7 +6,8 @@
     <title>Report</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
+<h1 class="title">Employee Tracker</h1>
+<p class="title" id="employeeCount"></p>
 <body>
     <div class="navBar">
         <a href="enter.html">Enter Hours</a>
@@ -20,7 +21,7 @@
     </div>
     <div id="reportCollector"></div>
     <div id="perWeekHolder" > 
-        <input type="number" name="" class="btn" id="weekSelection">
+        <input type="number" name="" class="btn" id="weekSelection" placeholder="What week?">
         <button type="button" onclick="specificWeek(document.getElementById('weekSelection').value)" class="btn">Collect week and collect data</button>
     </div>
     <div class="employeeDataStructure">
@@ -47,11 +48,11 @@
         </table>
         <div id="weekSummary">
             
-            The number of employees who worked less than 30 hours a week <span id="less30"></span>
+            The number of employees who worked less than 30 hours a week <span id="less30R"></span>
         <br>
-            The number of employees who worked more than 40 hours a week <span id="more40"></span>
+            The number of employees who worked more than 40 hours a week <span id="more40R"></span>
         <br>
-            The number of employees who worked between 37-39 hours. <span id="goodHour"></span>
+            The number of employees who worked between 37-39 hours. <span id="goodHourR"></span>
 
     </div>
     </div>

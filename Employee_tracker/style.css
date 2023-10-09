@@ -1,3 +1,10 @@
+.title{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
 a {
     color: white;
 }
@@ -31,7 +38,8 @@ a {
 .indiv {
     border: 1px solid white;
     width: 100%;
-
+    height: 100%;
+    box-sizing: border-box;
 }
 body {
     width: 80%;
@@ -45,11 +53,18 @@ body {
 }
 #weekSummary {
     text-align: center;
+    width: 80%;
+    margin: auto;
 }
 #completerowHolder {
     display: flex;
+    flex-wrap: wrap;
     text-align: center;
-    width: 100%;
+    width: 80%;
+    margin: auto;
+}
+div{
+    width: 50%;
 }
 #perWeekHolder {
     width: 80%;
@@ -70,4 +85,25 @@ body {
 }
 .employeeDataStructure td{
     border: 1px solid white;
+}
+table {
+    width: 100%;
+}
+#reportCollector {
+    width: 80%;
+    margin: auto;
+}
+#nextASK {
+    text-align: center;
+    border-radius: 2%;
+    background-color: rgb(240, 234, 234);
+    color: black;
+    align-content: center;
+    height: 20px;
+    font-size: 10px;
+}
+#complaintBox{
+    width: 80%;
+    margin: auto;
+    text-align: center;
 }

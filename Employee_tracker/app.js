@@ -1,3 +1,5 @@
+/*
+old redundant code kept for archival and educational purposes concerning cleanup
 function next() {
     const mondayEntry = document.createElement('div')
     mondayEntry.innerHTML = `<input type ="Number" id="mondayHour">Enter monday hours</input>`
@@ -18,10 +20,13 @@ function next() {
             document.getElementById('enterForm').appendChild(entry);
         }
 }
+*/
+
 window.onload = function() {
     startUp();
 };
 function ask() {
+        peopleCount()
         let dataCount = parseInt(sessionStorage.getItem('dataCount')) || 0;
         let askedCount = parseInt(sessionStorage.getItem('askedCount')) || 0;
         let employeeCount = parseInt(localStorage.getItem('employeeCount')) || 0;
@@ -31,7 +36,7 @@ function ask() {
         let goodhour = parseInt(localStorage.getItem('goodhour')) || 0;
 
     
-    if (employeeCount <= 7){
+    if (employeeCount !== 8){
     switch (askedCount) {
         case 0:
             complaint.innerHTML = 'creating report please enter data'
@@ -56,7 +61,8 @@ function ask() {
             }
             complaint.innerHTML = `creating report for ${idInput} during week ${weekInput} please enter data`
             document.getElementById('complaintBox').appendChild(complaint)
-            ask()
+            document.getElementById('nextASK').innerText = 'Enter id'
+
             break;
         case 1:
             if (sessionStorage.getItem('id') == null || sessionStorage.getItem('id') == '') {
@@ -66,6 +72,7 @@ function ask() {
             } while (isNaN(idInput) || idInput == '');
             sessionStorage.setItem('id', idInput);
             sessionStorage.setItem('askedCount', 1);
+            
             }
             let nameInput;
             do {
@@ -73,7 +80,7 @@ function ask() {
             } while (!isNaN(nameInput) || nameInput == '');
             sessionStorage.setItem('name', nameInput);
             sessionStorage.setItem('askedCount', 2);
-            ask()
+            document.getElementById('nextASK').innerText = 'Enter Monday hours'
             break;
         case 2:
             let mondayInput;
@@ -91,7 +98,7 @@ function ask() {
                 complaint.innerHTML = 'Good work!'
             }
                 document.getElementById('complaintBox').appendChild(complaint)
-            
+                document.getElementById('nextASK').innerText = 'Enter Tuesday hours'
             break;
         case 3:
             let tuesdayInput;
@@ -109,7 +116,7 @@ function ask() {
                 complaint.innerHTML = 'Good work!'
             }
                 document.getElementById('complaintBox').appendChild(complaint)
-                
+                document.getElementById('nextASK').innerText = 'Enter Wednesday hours'
             break;
         case 4:
             let wednesdayInput;
@@ -126,7 +133,7 @@ function ask() {
                 complaint.innerHTML = 'Good work!'
             }
                 document.getElementById('complaintBox').appendChild(complaint)
-                
+                document.getElementById('nextASK').innerText = 'Enter Thursday hours'
             break;
         case 5:
             let thursdayInput;
@@ -143,7 +150,7 @@ function ask() {
                 complaint.innerHTML = 'Good work!'
             }
                 document.getElementById('complaintBox').appendChild(complaint)
-                
+                document.getElementById('nextASK').innerText = 'Enter Friday hours'
             break;
         case 6:
             let fridayInput;
@@ -217,13 +224,14 @@ function ask() {
             localStorage.setItem(`${week.toString()},${id.toString()}`, JSON.stringify([week, id, name, mondayHours, tuesdayHours, wednesdayHours, thursdayHours, fridayHours]));
             dataCount++;
             localStorage.setItem('dataCount', dataCount.toString());
-
+            document.getElementById('nextASK').innerText = 'Enter week'
             sessionStorage.setItem('askedCount', 0);
             if (document.getElementById('complaintBox').innerHTML != '') {
                 document.getElementById('complaintBox').innerHTML = ''
             }
             peopleCount()
             countData()
+            updateCount()
             break;
     }
 } else {
@@ -247,17 +255,20 @@ function startUp() {
     if (sessionStorage.getItem('askedCount') == 7 || sessionStorage.getItem('askedCount') == '7') {
         sessionStorage.setItem('askedCount', 0);
     }
+    document.getElementById('employeeCount').innerText = `You have ${localStorage.getItem('employeeCount')} employees`
     checkForid()
     countData()
 }
-
+function updateCount() {
+    document.getElementById('employeeCount').innerText = `You have ${localStorage.getItem('employeeCount')} employees`
+}
 function checkForid() {
-    for (let i = 1; i < localStorage.length; i++) {
+    for (let i = 0; i < localStorage.length; i++) {
         const key = localStorage.key(i);
 
         if (key !== 'less30Count' && key !== 'more40Count' && key !== 'goodhourCount' && key !== 'dataCount' && key !== 'employeeCount') {
             const value = JSON.parse(localStorage.getItem(key));
-
+            console.log(key)
             // Construct the HTML structure based on the data
             const itemElement = document.createElement('div');
             let storeHtotal = (parseInt(value[3]) + parseInt(value[4]) + parseInt(value[5]) + parseInt(value[6]) + parseInt(value[7]));
@@ -275,8 +286,11 @@ function checkForid() {
             itemElement.innerHTML = `<div class="indiv"> <p>${value[2]} Week ${value[0]} TOTAL:${storeHtotal}</p>
                 <p>Week: ${value[0]} ID: ${value[1]} Name: ${value[2]} M: ${value[3]} T: ${value[4]} W: ${value[5]} T: ${value[6]} F: ${value[7]} Total hours: ${storeHtotal}, ${storeCompaint}</p>
                 </div>`;
-
-            document.getElementById('completerowHolder').appendChild(itemElement);
+            let rowHolder = document.getElementById('completerowHolder')
+            if (rowHolder){
+                document.getElementById('completerowHolder').appendChild(itemElement);
+            }
+            
         }
     }
 }
@@ -294,10 +308,15 @@ function countData() {
     let aValue = localStorage.getItem('less30Count') || 0;
     let bValue = localStorage.getItem('more40Count') || 0;
     let cValue = localStorage.getItem('goodhourCount') || 0;
-
-    document.getElementById('less30').innerText = `${aValue}`;
-    document.getElementById('more40').innerText = `${bValue}`;
-    document.getElementById('goodhour').innerText = `${cValue}`;
+    if (document.getElementById('less30')){
+        document.getElementById('less30').innerText = `${aValue}`;
+    }
+    if (document.getElementById('more40')){
+        document.getElementById('more40').innerText = `${bValue}`;
+    }
+    if (document.getElementById('goodhour')){
+        document.getElementById('goodhour').innerText = `${cValue}`;
+    }
 }
 
 function collectReports(a) {
@@ -428,7 +447,8 @@ function specificWeek(weekWanted) {
         document.getElementById(`employee${i + 1}`).innerText = total;
     }
 
-    document.getElementById('less30').innerText = Lcount
-    document.getElementById('more40').innerText = Mcount
-    document.getElementById('goodHour').innerText = Gcount
+    document.getElementById('less30R').innerText = Lcount
+    document.getElementById('more40R').innerText = Mcount
+    document.getElementById('goodHourR').innerText = Gcount
+
 }

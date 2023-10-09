@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="style.css">
     <script src="app.js"></script>
 </head>
+<h1 class="title">Employee Tracker</h1>
+<p class="title" id="employeeCount"></p>
 <body>
    <div class="navBar">
     <a href="enter.html">Enter Hours</a>
@@ -15,10 +17,11 @@
 </div>
    <br>
 <div class="buttonHolder">
+    <div id="nextASK">Enter week and id please</div>
     <button id="nextButton" onclick=ask()>Ask</button>
     <button id="clearAll" onclick="clearButton()">Destroy data</button>
 </div>
-    <div id="weekSummary">
+    <p id="weekSummary">
             
             The number of employees who worked less than 30 hours a week <span id="less30"></span>
         <br>
@@ -26,7 +29,7 @@
         <br>
             The number of employees who worked between 37-39 hours. <span id="goodhour"></span>
 
-    </div>
+    </p>
     <div id="complaintBox"></div>
     <div id="completerowHolder"></div>
     
