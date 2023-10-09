@@ -14,10 +14,17 @@ body {
     text-align: center;
     align-items: center;
     height: 200px;
+    
+
 }
 .head h1{
     border: 1px solid white;
     font-weight: bolder;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 100%;
 }
 .headImage{
     width: 40%;
@@ -105,13 +112,15 @@ body {
     display: flex;
 }
 .socials div{
-    height: 46.5px;
-    width: 50px;
-    display: inline;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    margin-left: 5px;
+    margin-bottom: 5px;
 }
 .socials div img{
     height: 100%;
-    width: 50px;
+    width: 100%;
     background-color: black
 }
 .copyright{
@@ -139,7 +148,12 @@ body {
         font-size: 14px; /* Adjust the font size for phones */
         
     }
-    
+    .head h1 {
+        padding-left: none;
+        padding-right: none;
+        padding-top: none;
+        padding-bottom: none;
+    }
     .contactInformation {
         font-size: 16px;
         margin-bottom: 20px;
