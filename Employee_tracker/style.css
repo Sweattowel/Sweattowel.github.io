@@ -11,7 +11,9 @@ a {
     justify-content: space-around;
 }
 .buttonHolder{
+    margin: auto;
     display: flex;
+    width: 80%;
 }
 #nextButton {
     width: 80%;
@@ -48,4 +50,24 @@ body {
     display: flex;
     text-align: center;
     width: 100%;
+}
+#perWeekHolder {
+    width: 80%;
+    margin: auto;
+    display: flex;
+}
+#weekSelection{
+    width: 100%;
+    margin: auto;
+}
+.btn {
+    width: 100%;
+    margin: auto;
+}
+.employeeDataStructure {
+    width: 80%;
+    margin: auto;
+}
+.employeeDataStructure td{
+    border: 1px solid white;
 }

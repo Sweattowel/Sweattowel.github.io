@@ -379,3 +379,56 @@ function peopleCount(){
     }
     localStorage.setItem('employeeCount', (count.length - 1))
 }
+
+
+function specificWeek(weekWanted) {
+    let Lcount = 0
+    let Mcount = 0
+    let Gcount = 0
+    let weekWantedStr = typeof weekWanted === 'string' ? weekWanted : JSON.stringify(weekWanted);
+    document.getElementById('employee1').innerText = '0'
+    document.getElementById('employee2').innerText = '0'
+    document.getElementById('employee3').innerText = '0'
+    document.getElementById('employee4').innerText = '0'
+    document.getElementById('employee5').innerText = '0'
+    document.getElementById('employee6').innerText = '0'
+    document.getElementById('employee7').innerText = '0'
+    let orderedReports = [];
+    
+    for (let i = 0; i < localStorage.length; i++) {
+        const key = localStorage.key(i);
+        if (
+            key !== 'less30Count' &&
+            key !== 'more40Count' &&
+            key !== 'goodhourCount' &&
+            key !== 'dataCount' &&
+            key !== 'employeeCount'
+        ) {
+            orderedReports.push(localStorage.getItem(key));
+        }
+    }
+    
+    orderedReports = orderedReports.filter(report => JSON.parse(report)[0] === weekWantedStr);
+    for (let i = 0; i < orderedReports.length; i++) {
+        let keyValues = JSON.parse(orderedReports[i]);
+        let m = parseInt(keyValues[3]);
+        let t = parseInt(keyValues[4]);
+        let w = parseInt(keyValues[5]);
+        let th = parseInt(keyValues[6]);
+        let f = parseInt(keyValues[7]);
+        let total = m += t += w += th += f;
+        if (total <= 30 ){
+            Lcount++;
+        } else if ( total >= 40){
+            Mcount++
+        } else if (total > 30 && total < 40){
+            Gcount++
+        }
+    
+        document.getElementById(`employee${i + 1}`).innerText = total;
+    }
+
+    document.getElementById('less30').innerText = Lcount
+    document.getElementById('more40').innerText = Mcount
+    document.getElementById('goodHour').innerText = Gcount
+}
