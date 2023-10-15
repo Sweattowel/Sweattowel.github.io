@@ -1,0 +1,24 @@
+/* gallery styles */
+.galleryContainer {
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+    margin: auto;
+    border: 1px solid black;
+}
+.galleryImage {
+    align-items: center;
+    width: 31%;
+    height: 35%;
+    border: 1px solid black;
+    margin: 10px;
+}
+.galleryImage img{
+    display: flex;
+    margin: auto;
+    height: 250px;
+    border: 1px solid black;
+}
+.textCenter{
+    text-align: center;
+}
