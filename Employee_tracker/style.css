@@ -107,3 +107,46 @@ table {
     margin: auto;
     text-align: center;
 }
+#returnHome {
+    display: flex; 
+    width: 80%; 
+    text-align: center; 
+    align-content: center; 
+    border-top: 1px solid white; 
+    margin: auto; 
+    justify-content: center; 
+    position: fixed; 
+    bottom: 10px;
+}
+
+#exit1:hover {
+    transition: all 0.3s ease;
+    font-size: 50px;
+    font-weight: bolder;
+}
+
+#exit2:hover{
+    transition: all 0.3s ease;
+    font-size: 50px;
+    font-weight: bolder;
+}
+#exit3:hover{
+    transition: all 0.3s ease;
+    font-size: 50px;
+    font-weight: bolder;
+}
+#exit4:hover{
+    transition: all 0.3s ease;
+    font-size: 50px;
+    font-weight: bolder;
+}
+#exit5:hover{
+    transition: all 0.3s ease;
+    font-size: 50px;
+    font-weight: bolder;
+}
+#exit6:hover{
+    transition: all 0.3s ease;
+    font-size: 50px;
+    font-weight: bolder;
+}
